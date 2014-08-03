@@ -9,9 +9,7 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
   data_extract <- numeric()
   # read through files specified by 'id'
   for (i in id) {
-#    con <- file(filelist[i])
     data_extract <- c(data_extract, read.csv(filelist[i])[[pollutant]])
-#    close(con)
     }
   round(mean(data_extract, na.rm=TRUE),3)
 }
